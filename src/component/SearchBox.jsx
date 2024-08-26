@@ -19,7 +19,7 @@ const SearchBox = () => {
         type='text'
         value={keyword}
         onChange={(e) => setKeyword(e.target.value)}
-        placeholder='검색어를 입력하세요...'
+        placeholder='검색할 이름을 입력하세요...'
         className='flex-1 p-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-gray-500'
       />
       <button

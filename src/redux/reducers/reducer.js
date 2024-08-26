@@ -18,6 +18,19 @@ const contactReducer = (state = initialState, action) => {
         ],
       }
 
+    case 'DEL_CONTACT':
+      return {
+        ...state,
+        contactList: state.contactList.filter(
+          (contact) =>
+            !(
+              contact.phoneNumber === payload.phoneNumber &&
+              contact.name === payload.name &&
+              contact.image === payload.image
+            )
+        ),
+      }
+
     case 'SEARCH_BY_USERNAME':
       return { ...state, keyword: payload.keyword }
     default:
