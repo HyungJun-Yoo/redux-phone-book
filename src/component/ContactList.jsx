@@ -18,10 +18,6 @@ const ContactList = () => {
     }
   }, [keyword, contactList])
 
-  useEffect(() => {
-    console.log(contactList)
-  }, [contactList])
-
   return (
     <div className='w-full flex flex-col items-center'>
       <SearchBox />
