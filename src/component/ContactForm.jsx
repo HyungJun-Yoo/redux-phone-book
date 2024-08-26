@@ -44,6 +44,12 @@ const ContactForm = () => {
     }
   }
 
+  const handlePhoneInput = (event) => {
+    const input = event.target.value
+    const filteredInput = input.replace(/[^0-9]/g, '')
+    event.target.value = filteredInput
+  }
+
   return (
     <div className='w-[400px] sm:w-[250px] h-[550px] p-6 border rounded-2xl shadow-xl bg-white flex-shrink-0'>
       <h2 className='flex text-2xl font-bold mb-6 text-gray-600'>
@@ -102,6 +108,7 @@ const ContactForm = () => {
             type='tel'
             {...register('phoneNumber')}
             placeholder=''
+            onInput={handlePhoneInput}
             className='border rounded-2xl w-full p-3 border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 mt-4'
           />
         </div>
