@@ -36,6 +36,11 @@ const ContactList = () => {
             />
           ))}
       </div>
+      {keyword && filteredList.length === 0 && (
+        <div className='flex justify-center mt-4 text-xl md:text-2xl lg:text-3xl'>
+          검색 결과가 없습니다.
+        </div>
+      )}
     </div>
   )
 }
