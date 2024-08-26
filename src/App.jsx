@@ -4,9 +4,11 @@ import ContactList from './component/ContactList'
 
 function App() {
   return (
-    <div className='flex flex-col justify-center'>
+    <div className='flex flex-col bg-neutral-50 h-full min-h-screen'>
       <div className='flex justify-center'>
-        <h1 className='text-3xl mt-10 mb-10'>Phone Book</h1>
+        <h1 className='text-[60px] mt-4 mb-10 font-bold w-full max-w-[1280px] text-center'>
+          Phone Book
+        </h1>
       </div>
       <div className='flex flex-col items-center sm:items-start sm:flex-row justify-around gap-8 p-8'>
         <div className='flex justify-center flex-grow'>

@@ -13,6 +13,12 @@ const ContactForm = () => {
 
   const onSubmit = (data) => {
     const { name, phoneNumber } = data
+
+    if (name === '' || phoneNumber === '') {
+      reset()
+      return
+    }
+
     dispatch({
       type: 'ADD_CONTACT',
       payload: { name, phoneNumber, image: imagePreview },
@@ -75,28 +81,26 @@ const ContactForm = () => {
           </div>
         </div>
 
-        <div className='mt-4'>
+        <div className='mt-4 text-lg'>
           <label className='mb-2 flex items-center text-gray-500 mt-4'>
             <FontAwesomeIcon icon={faUser} className='mr-2' />
             이름
           </label>
           <input
             type='text'
-            {...register('name', { required: '이름은 필수입니다.' })}
+            {...register('name')}
             className='border rounded-2xl w-full p-3 border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 mt-2'
           />
         </div>
 
-        <div className='mt-4'>
-          <label className='mt-4 flex items-center text-gray-500'>
+        <div className='mt-4 text-lg'>
+          <label className='mt-4 flex items-center text-gray-500 '>
             <FontAwesomeIcon icon={faPhone} className='mr-2' />
             핸드폰 번호
           </label>
           <input
             type='tel'
-            {...register('phoneNumber', {
-              required: '핸드폰 번호는 필수입니다.',
-            })}
+            {...register('phoneNumber')}
             placeholder=''
             className='border rounded-2xl w-full p-3 border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 mt-4'
           />
@@ -104,7 +108,7 @@ const ContactForm = () => {
 
         <button
           type='submit'
-          className='bg-gray-500 text-white rounded-2xl px-4 py-2 w-full hover:bg-gray-600 transition mt-8'
+          className='bg-gray-500 text-white rounded-2xl px-4 py-2 w-full hover:bg-gray-600 transition mt-8 text-lg'
         >
           제출하기
         </button>

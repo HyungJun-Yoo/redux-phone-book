@@ -21,14 +21,14 @@ const ContactItem = ({ image, name, phoneNumber }) => {
           <FontAwesomeIcon icon={faTimes} className='w-[12px] h-[12px]' />
         </button>
       </div>
-      <div className='flex flex-col justify-center items-center gap-4'>
+      <div className='flex flex-col justify-center items-center gap-4 mt-2'>
         <img
           src={image ? image : person}
           alt={name}
           className='w-[100px] h-[100px] border border-gray-100 rounded-full'
         />
-        <div className=''>{name}</div>
-        <div className=''>{phoneNumber}</div>
+        <div className='text-2xl'>{name}</div>
+        <div className='text-2xl'>{phoneNumber}</div>
       </div>
     </div>
   )
