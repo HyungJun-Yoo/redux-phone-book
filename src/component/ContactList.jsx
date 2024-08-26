@@ -18,6 +18,10 @@ const ContactList = () => {
     }
   }, [keyword, contactList])
 
+  useEffect(() => {
+    console.log(contactList)
+  }, [contactList])
+
   return (
     <div className='w-full flex flex-col items-center'>
       <SearchBox />
@@ -25,7 +29,7 @@ const ContactList = () => {
         {filteredList.length > 0 &&
           filteredList.map((contact, index) => (
             <ContactItem
-              key={contact.phoneNumber}
+              key={`${contact.phoneNumber}-${index}`}
               name={contact.name}
               phoneNumber={contact.phoneNumber}
               image={contact.image}

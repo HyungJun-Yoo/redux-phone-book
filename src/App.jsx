@@ -14,7 +14,7 @@ function App() {
         <div className='flex justify-center flex-grow'>
           <ContactForm />
         </div>
-        <div className='flex justify-center border border-gray-700 p-8 w-[400px] lg:w-[700px] xl:w-[900px] 2xl:w-[1100px]'>
+        <div className='flex justify-center border border-gray-700 p-8 w-[400px] lg:w-[700px] xl:w-[900px] 2xl:w-[1100px] min-h-[550px]'>
           <ContactList />
         </div>
       </div>
